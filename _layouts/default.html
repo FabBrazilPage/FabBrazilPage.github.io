@@ -8,96 +8,22 @@
 			<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 			<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+			<script src="papaparse.min.js"></script>
+			<script src="https://www.powr.io/powr.js?platform=html"></script>
+
+
 		</head>
-		<body onload="javascript:openPastDoors(); javascript:setUpModals()">		
+		<body>		
 			{{ content }}
 
-			<script type="text/javascript">
-				function openPastDoors(){
-					var today = new Date();
-			    	allBoxes = document.getElementsByTagName('input');
-			        
-			        for(var i = 0; i < allBoxes.length; i++) {
-			        	if (i == 0){
-			        		var doorDay = new Date("2020-12-" + String(allBoxes[i].id));
-			        	} else { var doorDay = new Date("2020-12-" + String(allBoxes[i].id - 1));
-			        	}
-			        	if (doorDay.getDate() < today.getDate()) {
-				            allBoxes[i].checked = true;
-			        	}
-			        	allBoxes[i].onclick = function openDoor(){
-											var today = new Date();
-											if (this.checked != false){ // door is closed
-												if (today.getDate() != Number(this.id)){ //Wrong day
-													this.checked = false;
-													//this.checked = true; //Debugging
-													alert("You can't open this door yet!");
-												} else {
-													this.checked = true;
-												}
-											} else {
-												this.checked = true;
-												//open Doors stay open
-											}
-
-										};
-			        }
-				}
-			</script>
-			<script type="text/javascript">
-				function setUpModals() {
-
-					// Get the modal
-					var modal = document.getElementById("myModal");
-
-					var allImages = document.getElementsByTagName("img");
-					//last image is modal
-					for (var i = 1; i < allImages.length - 1; i++)  {
-						var img = allImages[i];
-						var modalImg = document.getElementById("modalDisplayer");
-						var captionText = document.getElementById("caption");
-						img.onclick = function(){
-						  modal.style.display = "block";
-						  modalImg.src = this.src;
-						  //captionText.innerHTML = this.alt;
-						}
-
-					}
-
-					var modalText = document.getElementById("myModalText");
-
-					var allIcons = document.getElementsByTagName("i");
-
-					for (var i = 0; i < allIcons.length; i++){
-						var currContent = allIcons[i];
-						var modalContent = document.getElementById("modalDisplayerText");
-						currContent.onclick = function(clickSrc){
-						  var allHiddenTextBoxes = document.getElementsByTagName("p");
-
-						  modalText.style.display = "block";
-						  var srcId = Number(clickSrc.srcElement.id[4]);
-						  modalContent.textContent = allHiddenTextBoxes[srcId + 1].textContent; //Offset 1 for the empty p
-
-						  var elem = document.createElement("img");
-						  elem.src = allHiddenTextBoxes[srcId + 2].textContent;
-						  modalContent.appendChild(elem);
-						}
-					}
-
-
-					// Get the <span> element that closes the modal
-					var span = document.getElementsByClassName("close")[0];
-
-					// When the user clicks on <span> (x), close the modal
-					span.onclick = function() { 
-					  modal.style.display = "none";
-					}
-					var span = document.getElementsByClassName("closeText")[0];
-
-					span.onclick = function() { 
-					  modalText.style.display = "none";
-					}
-				}
-			</script>
+<script type="text/javascript">
+	// Read file and hydrate block accordingly
+	Papa.parse(fileInput.files[0], {
+		complete: function(results) {
+			console.log(results);
+		}
+	});
+</script>
 		</body>
 	</html>
