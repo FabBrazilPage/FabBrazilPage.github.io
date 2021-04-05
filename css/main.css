@@ -1,11 +1,27 @@
 .grid-container {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 10% 10% auto 10%;
+  grid-template-rows: 10% 10% 70% 10%;
 }
 
 #hero-banner, #weather-content, #music-player, #main-content {
   grid-column-start: span 2;
+  margin: 10px;
+}
+
+#ad, #recipe-foto {
+  border:2px solid #fff;
+  -moz-box-shadow: 10px 10px 5px #ccc;
+  -webkit-box-shadow: 10px 10px 5px #ccc;
+  box-shadow: 10px 10px 5px #ccc;
+  -moz-border-radius:25px;
+  -webkit-border-radius:25px;
+  border-radius:25px;
+
+}
+
+#hero-banner {
+  width: 100%;
 }
 
 #main-content {
