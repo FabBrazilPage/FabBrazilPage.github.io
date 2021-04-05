@@ -25,7 +25,7 @@
 }
 
 #welcome {
-  width: 100%
+  width: 100%;
   height: 200px;
 }
 
@@ -43,6 +43,8 @@
   grid-column-start: 2;
   display: grid;
   grid-template-rows: auto auto auto;
+  font-family: 'Cookie', cursive;
+  font-size: 60px;
 }
 
 #recipe-foto {
@@ -65,4 +67,17 @@
 
 #recipe-link {
   grid-row-start: 3;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
