@@ -1,9 +1,9 @@
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: 20% auto 10%;
+  grid-template-columns: auto auto;
+  grid-template-rows: 20% 10% auto 10%;
 }
 
-#hero-banner, #main-content, #music-player {
-  grid-column-start: span 3;
+#hero-banner, #weather-content, #music-player {
+  grid-column-start: span 2;
 }
