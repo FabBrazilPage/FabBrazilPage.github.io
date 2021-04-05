@@ -1,7 +1,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 20% 10% auto 10%;
+  grid-template-rows: 10% 10% auto 10%;
 }
 
 #hero-banner, #weather-content, #music-player, #main-content {
@@ -26,5 +26,19 @@
 #ad {
   grid-column-start: 2;
   grid-row-start: span 3;
+}
 
+#recipe-header {
+  grid-row-start: 1;
+  grid-column-start: 2;
+}
+
+#recipe-title {
+  grid-row-start: 2;
+  grid-column-start: 2;
+}
+
+#recipe-link {
+  grid-row-start: 3;
+  grid-column-start: 2;
 }
