@@ -16,6 +16,9 @@
 
 #recipe {
   grid-column-start: 1;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto auto;
 }
 
 #recipe-foto {
