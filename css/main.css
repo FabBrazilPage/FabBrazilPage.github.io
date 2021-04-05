@@ -5,13 +5,13 @@
   background: url("/images/warm-background-1.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.6;
 }
 
 #hero-banner, #weather-content, #music-player, #main-content {
   grid-column-start: span 2;
   margin: 10px;
 }
+
 
 #ad, #recipe-foto {
   border:2px solid #fff;
@@ -36,37 +36,33 @@
 #main-content {
   display: grid;
   grid-template-rows: auto auto auto;
-  grid-template-columns: 50% auto;
+  grid-template-columns: auto auto auto;
 }
 
 #recipe {
-  grid-column-start: 1;
+  grid-column-start: 2;
   display: grid;
   grid-template-rows: auto auto auto;
-  grid-template-columns: 50% auto;
 }
 
 #recipe-foto {
+  grid-column-start: 1;
   grid-row-start: span 3;
-
 }
 
 #ad {
-  grid-column-start: 2;
+  grid-column-start: 3;
   grid-row-start: span 3;
 }
 
 #recipe-header {
   grid-row-start: 1;
-  grid-column-start: 2;
 }
 
 #recipe-title {
   grid-row-start: 2;
-  grid-column-start: 2;
 }
 
 #recipe-link {
   grid-row-start: 3;
-  grid-column-start: 2;
 }
